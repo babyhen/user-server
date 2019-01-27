@@ -6,14 +6,24 @@ import com.pawpaw.userserver.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 
+@RestController
 public class UserController implements IUserController {
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
+
     @Autowired
     private UserService userService;
+
+
+    @PostConstruct
+    public  void init(){
+        System.out.println(1111);
+    }
 
     @Override
     public RegistUserResp registByMobile(Integer gender, String mobile, String nickName) {

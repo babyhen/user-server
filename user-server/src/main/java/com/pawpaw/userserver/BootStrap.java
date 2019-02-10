@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan("com.pawpaw.userserver.dao")
 @EnableAspectJAutoProxy
-@EnableSwagger2
 public class BootStrap {
 
     public static void main(String[] args) {

@@ -42,6 +42,7 @@
 	
 	
 	<logger name="com.pawpaw" level="INFO" />
+	<logger name="com.pawpaw.framework" level="DEBUG" />
 	<logger name="com.pawpaw.userserver.dao" level="DEBUG" />
 	
 </configuration>

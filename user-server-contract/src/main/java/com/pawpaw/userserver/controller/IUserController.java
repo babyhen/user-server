@@ -2,8 +2,10 @@ package com.pawpaw.userserver.controller;
 
 import com.pawpaw.userserver.controller.vo.RegistUserResp;
 import io.swagger.annotations.ApiOperation;
+import lombok.Data;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -48,5 +50,14 @@ public interface IUserController {
     @PostMapping("/closeAccount")
     public void closeAccount(@RequestParam("userId") long userId);
 
+    @ApiOperation("通过非空字段查询")
+    @PostMapping("/findByExample")
+    public void findByExample(@RequestBody UserExample example);
+
+    @Data
+    public static class UserExample {
+        private Long userId;
+        private Integer gender;
+    }
 
 }

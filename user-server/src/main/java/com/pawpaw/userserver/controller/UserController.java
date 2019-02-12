@@ -37,5 +37,10 @@ public class UserController implements IUserController {
         this.userService.closeAccount(userId);
     }
 
+    @Override
+    public void findByExample(UserExample example) {
+        System.out.println(example);
+    }
+
 
 }
